@@ -1,5 +1,8 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.nio.file.Path; // to use paths
+import java.nio.file.Files; // to use files 
+
 public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner (System.in);
@@ -27,9 +30,17 @@ public class Main {
         }
 
         else if (ans == 1){
-            System.out.println("Please Enter file name: ");
+            System.out.println("Please Enter file path: ");
             filePathName = scan.nextLine();
-            System.out.println(filePathName);
+
+            System.out.println("Searching for: " + filePathName);
+            Path filePath = Path.of(filePathName);
+            
+            if (Files.exists(filePath)){
+                System.out.println("File Found!");
+
+                //encrypt
+            }
         }
 
         else if (ans == 2){
